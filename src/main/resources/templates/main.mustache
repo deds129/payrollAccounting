@@ -2,9 +2,26 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Hello page</title>
+    <title>Main page</title>
 </head>
 <body>
-<div>{{some}}</div>
+<div>
+    <form method="post">
+        <input type ="text" name="workerName" placeholder="Введите ФИО работника" />
+        <button type="submit">Добавить</button>
+    </form>
+</div>
+
+<div>Cписок работников</div>
+<form method="post" action="filter">
+    <input type="text" name = "filter">
+    <button type="submit">Найти</button>
+</form>
+{{#workers}}
+<div>
+    <b>{{workerId}}</b>
+    <b>{{workerName}}</b>
+</div>
+{{/workers}}
 </body>
 </html>
