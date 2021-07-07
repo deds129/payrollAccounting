@@ -5,8 +5,19 @@
     <title>Main page</title>
 </head>
 <body>
+
+<div>
+    <form action="/logout" method="post">
+        <input type="hidden" name="_csrf" value="{{_csrf.token}}">
+        <input type="submit" value="Sign Out"/>
+    </form>
+</div>
+
+
+
 <div>
     <form method="post">
+        <input type="hidden" name="_csrf" value="{{_csrf.token}}">
         <input type ="text" name="workerName" placeholder="Введите ФИО работника" />
         <button type="submit">Добавить</button>
     </form>
@@ -14,6 +25,7 @@
 
 <div>Cписок работников</div>
 <form method="post" action="filter">
+    <input type="hidden" name="_csrf" value="{{_csrf.token}}">
     <input type="text" name = "filter">
     <button type="submit">Найти</button>
 </form>
