@@ -1,4 +1,4 @@
-package com.tupolev.application;
+package com.tupolev.application.controller;
 
 import com.tupolev.application.domain.Worker;
 import com.tupolev.application.repos.WorkerRepo;
@@ -13,7 +13,7 @@ import java.util.Map;
 
 
 @Controller
-public class WebAppController {
+public class MainController {
     @Autowired
     private WorkerRepo workerRepo;
 
