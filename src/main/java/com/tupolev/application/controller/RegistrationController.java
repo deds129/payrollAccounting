@@ -1,14 +1,13 @@
 package com.tupolev.application.controller;
 
-import com.tupolev.application.domain.Role;
-import com.tupolev.application.domain.User;
-import com.tupolev.application.repos.UserRepo;
+import com.tupolev.application.models.Role;
+import com.tupolev.application.models.User;
+import com.tupolev.application.repositories.UserRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import javax.sql.RowSet;
 import java.util.Collections;
 import java.util.Map;
 

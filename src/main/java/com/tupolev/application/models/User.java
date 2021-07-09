@@ -1,4 +1,4 @@
-package com.tupolev.application.domain;
+package com.tupolev.application.models;
 
 import javax.persistence.*;
 import java.util.Set;
@@ -14,10 +14,9 @@ public class User {
     private String password;
     //ФИО
     private String fullName;
-    //Онлайн / Офлайн
+    //аккаунт активирован или нет
     private boolean active;
-    //Должность в компании
-    private String position;
+
 
     @ElementCollection(targetClass = Role.class, fetch = FetchType.EAGER)
     @CollectionTable(name = "user_role", joinColumns = @JoinColumn(name = "user_id"))
@@ -63,14 +62,6 @@ public class User {
 
     public void setActive(boolean active) {
         this.active = active;
-    }
-
-    public String getPosition() {
-        return position;
-    }
-
-    public void setPosition(String position) {
-        this.position = position;
     }
 
     public Set<Role> getRoles() {

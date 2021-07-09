@@ -1,4 +1,4 @@
-package com.tupolev.application.config;
+package com.tupolev.application.configuration;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;

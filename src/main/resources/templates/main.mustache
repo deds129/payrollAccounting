@@ -18,22 +18,26 @@
 <div>
     <form method="post">
         <input type="hidden" name="_csrf" value="{{_csrf.token}}">
-        <input type ="text" name="workerName" placeholder="Введите ФИО работника" />
+        <input type ="text" name="taskDiscription" placeholder="Введите описание задания"/>
+        <input type ="text" name="taskPlace" placeholder="Введите место задания"/>
+        <input type ="text" name="taskTag" placeholder="Введите тэг"/>
         <button type="submit">Добавить</button>
     </form>
 </div>
 
-<div>Cписок работников</div>
+<div>Task list</div>
 <form method="post" action="filter">
     <input type="hidden" name="_csrf" value="{{_csrf.token}}">
     <input type="text" name = "filter">
     <button type="submit">Найти</button>
 </form>
-{{#workers}}
+{{#tasks}}
 <div>
-    <b>{{workerId}}</b>
-    <b>{{workerName}}</b>
+    <b>{{taskId}}</b>
+    <b>{{taskDiscription}}</b>
+    <b>{{taskPlace}}</b>
+    <b>{{taskTag}}</b>
 </div>
-{{/workers}}
+{{/tasks}}
 </body>
 </html>
