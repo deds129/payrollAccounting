@@ -21,7 +21,7 @@ public class Task {
     private String taskTag;
 
     @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "id")
+    @JoinColumn(name = "user_id")
     private User author;
 
     public Task(String taskDiscription, String taskPlace, String taskTag, User author) {
