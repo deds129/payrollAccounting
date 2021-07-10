@@ -10,6 +10,14 @@ import javax.persistence.*;
 
 @Entity
 public class Task {
+    public int getTaskId() {
+        return taskId;
+    }
+
+    public void setTaskId(int taskId) {
+        this.taskId = taskId;
+    }
+
     @GeneratedValue(strategy= GenerationType.AUTO)
     @Id
     private int taskId;
@@ -50,11 +58,11 @@ public class Task {
         return taskTag;
     }
 
-    public User getAutor() {
+    public User getAuthor() {
         return author;
     }
 
-    public void setAutor(User autor) {
+    public void setAuthor(User autor) {
         this.author = autor;
     }
 }

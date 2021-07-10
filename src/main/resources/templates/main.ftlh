@@ -1,19 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Main page</title>
-</head>
-<body>
+<#import "parts/common.ftlh" as c>
+<#import "parts/login.ftlh" as l>
 
+<@c.page>
 <div>
-    <form action="/logout" method="post">
-        <input type="hidden" name="_csrf" value="{{_csrf.token}}">
-        <input type="submit" value="Sign Out"/>
-    </form>
+    <@l.logout />
 </div>
-
-
 
 <div>
     <form method="post">
@@ -31,14 +22,15 @@
     <input type="text" name = "filter">
     <button type="submit">Найти</button>
 </form>
-{{#tasks}}
+<#list tasks as task>
 <div>
-    <b>{{taskId}}</b>
-    <b>{{taskDiscription}}</b>
-    <b>{{taskPlace}}</b>
-    <b>{{taskTag}}</b>
-    <strong>{{authorName}}</strong>
+    <b>${task.taskId}</b>
+    <b>${task.taskDiscription}</b>
+    <span>${task.taskPlace}</span>
+    <i>${task.taskTag}</i>
+    <strong>${task.authorName}</strong>
 </div>
-{{/tasks}}
-</body>
-</html>
+<#else>
+    Tasks not found!
+</#list>
+</@c.page>
