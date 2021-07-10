@@ -1,8 +1,10 @@
 package com.tupolev.application.controller;
 
 import com.tupolev.application.models.Task;
+import com.tupolev.application.models.User;
 import com.tupolev.application.repositories.TaskRepo;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -29,12 +31,13 @@ public class MainController {
     }
 
     @PostMapping("/main")
-    public String add(@RequestParam String taskDiscription,
-                      String taskPlace,
-                      String taskTag,
+    public String add(@AuthenticationPrincipal User user,
+            @RequestParam String taskDiscription,
+                      @RequestParam String taskPlace,
+                      @RequestParam String taskTag,
                       Map<String, Object> model){
 
-        Task task = new Task(taskDiscription, taskPlace, taskTag);
+        Task task = new Task(taskDiscription, taskPlace, taskTag, user);
         taskRepo.save(task);
         Iterable<Task> tasks = taskRepo.findAll();
         model.put("tasks",tasks);

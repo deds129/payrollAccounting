@@ -5,10 +5,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 
 @Entity
@@ -23,12 +20,20 @@ public class Task {
 
     private String taskTag;
 
-    public Task(String taskDiscription, String taskPlace, String taskTag) {
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "id")
+    private User author;
+
+    public Task(String taskDiscription, String taskPlace, String taskTag, User author) {
         this.taskDiscription = taskDiscription;
         this.taskPlace = taskPlace;
         this.taskTag = taskTag;
+        this.author = author;
     }
 
+    public String getAuthorName(){
+        return author != null ? author.getUsername() : "<none>";
+    }
 
     public Task() {
     }
@@ -43,5 +48,13 @@ public class Task {
 
     public String getTaskTag() {
         return taskTag;
+    }
+
+    public User getAutor() {
+        return author;
+    }
+
+    public void setAutor(User autor) {
+        this.author = autor;
     }
 }
