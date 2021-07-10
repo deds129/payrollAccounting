@@ -10,6 +10,4 @@ public interface TaskRepo extends CrudRepository<Task, Integer> {
     List<Task> findByTaskPlace(String place);
     List<Task> findByTaskTag(String tag);
 
-    //todo: find by any field
-
 }
