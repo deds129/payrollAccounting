@@ -18,9 +18,8 @@
 </div>
 
 <div>Task list</div>
-<form method="post" action="filter">
-    <input type="hidden" name="_csrf" value="{{_csrf.token}}">
-    <input type="text" name = "filter">
+<form method="get" action="/main">
+    <input type="text" name = "filter" value="${filter?ifExists}">
     <button type="submit">Найти</button>
 </form>
 <#list tasks as task>
