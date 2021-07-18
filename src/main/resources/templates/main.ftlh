@@ -9,17 +9,17 @@
 
 <div>
     <form method="post">
-        <input type="hidden" name="_csrf" value="{{_csrf.token}}">
         <input type ="text" name="taskDiscription" placeholder="Введите описание задания"/>
         <input type ="text" name="taskPlace" placeholder="Введите место задания"/>
         <input type ="text" name="taskTag" placeholder="Введите тэг"/>
+        <input type="hidden" name="_csrf" value="{{_csrf.token}}">
         <button type="submit">Добавить</button>
     </form>
 </div>
 
 <div>Task list</div>
 <form method="get" action="/main">
-    <input type="text" name = "filter" value="${filter?ifExists}">
+    <input type="text" name = "filter" value="${filter}">
     <button type="submit">Найти</button>
 </form>
 <#list tasks as task>
