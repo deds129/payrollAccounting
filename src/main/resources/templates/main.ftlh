@@ -12,7 +12,7 @@
     </div>
 
     <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-        Add new Task
+        Добавить новый наряд
     </a>
 
 <div class="collapse" id="collapseExample">
@@ -30,7 +30,7 @@
         <div class="form-group">
             <div class="custom-file">
                 <input type="file" name="file" id="customFile">
-                <label class="custom-file-label" for="customFile">Choose file</label>
+                <label class="custom-file-label" for="customFile">Выберите сайт</label>
             </div>
         </div>
         <button type="submit">Добавить</button>
@@ -55,7 +55,7 @@
         </div>
     </div>
     <#else>
-    No message
+    Нарядов не найдено!
     </#list>
 </div>
 </@c.page>

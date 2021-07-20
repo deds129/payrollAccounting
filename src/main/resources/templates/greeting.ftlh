@@ -1,6 +1,6 @@
 <#import "parts/common.ftlh" as c>
 
 <@c.page>
-<h5>Hello, guest</h5>
-<div>This is a simple app for repair service</div>
+<h5>Привет, Гость</h5>
+<div>Это простое приложения для ремонтной службы ПАО "Туполев"</div>
 </@c.page>
