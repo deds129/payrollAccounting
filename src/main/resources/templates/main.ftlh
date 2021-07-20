@@ -4,8 +4,9 @@
     <div class="form-row">
         <div class="form-group col-md-6">
             <form method="get" action="/main" class="form-inline">
-                <input type="text" name="filter" class="form-control" value="${filter?ifExists}" placeholder="Search by tag">
+                <input type="text" name="filter" class="form-control" value="${filter!}" placeholder="Search by tag">
                 <button type="submit" class="btn btn-primary ml-2">Search</button>
+                <input type="hidden" name="_csrf" value="${_csrf.token}" />
             </form>
         </div>
     </div>
@@ -17,7 +18,6 @@
 <div class="collapse" id="collapseExample">
     <div class="form-group mt-3">
     <form method="post" enctype="multipart/form-data">
-        <input type="hidden" name="_csrf" value="{{_csrf.token}}"/>
         <div class="form-group">
             <input type ="text" class="form-control" name="taskDiscription" placeholder="Введите описание задания"/>
         </div>
@@ -34,6 +34,7 @@
             </div>
         </div>
         <button type="submit">Добавить</button>
+        <input type="hidden" name="_csrf" value="${_csrf.token}">
     </form>
     </div>
 </div>
@@ -45,9 +46,9 @@
             <img src="/img/${task.filename}" class="card-img-top">
         </#if>
         <div class="m-2">
-            <span>${task.taskDiscription}</span>
-            <span>${task.taskPlace}</span>
-            <i>${task.taskTag}</i>
+            <span>${task.taskDiscription}<p></span>
+            <span>${task.taskPlace}<p></span>
+            <i>${task.taskTag}<p></i>
         </div>
         <div class="card-footer text-muted">
             ${task.authorName}

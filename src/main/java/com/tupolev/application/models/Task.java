@@ -5,14 +5,6 @@ import javax.persistence.*;
 
 @Entity
 public class Task {
-    public int getTaskId() {
-        return taskId;
-    }
-
-    public void setTaskId(int taskId) {
-        this.taskId = taskId;
-    }
-
     @GeneratedValue(strategy= GenerationType.AUTO)
     @Id
     private int taskId;
@@ -41,6 +33,14 @@ public class Task {
     }
 
     public Task() {
+    }
+
+    public int getTaskId() {
+        return taskId;
+    }
+
+    public void setTaskId(int taskId) {
+        this.taskId = taskId;
     }
 
     public String getTaskDiscription() {
