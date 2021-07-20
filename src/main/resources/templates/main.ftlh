@@ -1,36 +1,60 @@
 <#import "parts/common.ftlh" as c>
-<#import "parts/login.ftlh" as l>
 
 <@c.page>
-<div>
-    <@l.logout />
-    <span><a href="/user">User list</a> </span>
-</div>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <form method="get" action="/main" class="form-inline">
+                <input type="text" name="filter" class="form-control" value="${filter?ifExists}" placeholder="Search by tag">
+                <button type="submit" class="btn btn-primary ml-2">Search</button>
+            </form>
+        </div>
+    </div>
 
-<div>
-    <form method="post">
-        <input type ="text" name="taskDiscription" placeholder="Введите описание задания"/>
-        <input type ="text" name="taskPlace" placeholder="Введите место задания"/>
-        <input type ="text" name="taskTag" placeholder="Введите тэг"/>
-        <input type="hidden" name="_csrf" value="{{_csrf.token}}">
+    <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+        Add new Task
+    </a>
+
+<div class="collapse" id="collapseExample">
+    <div class="form-group mt-3">
+    <form method="post" enctype="multipart/form-data">
+        <input type="hidden" name="_csrf" value="{{_csrf.token}}"/>
+        <div class="form-group">
+            <input type ="text" class="form-control" name="taskDiscription" placeholder="Введите описание задания"/>
+        </div>
+        <div class="form-group">
+            <input type ="text" class="form-control" name="taskPlace" placeholder="Введите место задания"/>
+        </div>
+        <div class="form-group">
+            <input type ="text" class="form-control"  name="taskTag" placeholder="Введите тэг"/>
+        </div>
+        <div class="form-group">
+            <div class="custom-file">
+                <input type="file" name="file" id="customFile">
+                <label class="custom-file-label" for="customFile">Choose file</label>
+            </div>
+        </div>
         <button type="submit">Добавить</button>
     </form>
+    </div>
 </div>
 
-<div>Task list</div>
-<form method="get" action="/main">
-    <input type="text" name = "filter" value="${filter}">
-    <button type="submit">Найти</button>
-</form>
-<#list tasks as task>
-<div>
-    <b>${task.taskId}</b>
-    <b>${task.taskDiscription}</b>
-    <span>${task.taskPlace}</span>
-    <i>${task.taskTag}</i>
-    <strong>${task.authorName}</strong>
+<div class="card-columns">
+     <#list tasks as task>
+    <div class="card my-3">
+        <#if task.filename??>
+            <img src="/img/${task.filename}" class="card-img-top">
+        </#if>
+        <div class="m-2">
+            <span>${task.taskDiscription}</span>
+            <span>${task.taskPlace}</span>
+            <i>${task.taskTag}</i>
+        </div>
+        <div class="card-footer text-muted">
+            ${task.authorName}
+        </div>
+    </div>
+    <#else>
+    No message
+    </#list>
 </div>
-<#else>
-    Tasks not found!
-</#list>
 </@c.page>

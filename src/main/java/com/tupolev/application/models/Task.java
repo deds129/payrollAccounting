@@ -21,6 +21,8 @@ public class Task {
 
     private String taskPlace;
 
+    private String filename;
+
     private String taskTag;
 
     @ManyToOne(fetch = FetchType.EAGER)
@@ -35,7 +37,7 @@ public class Task {
     }
 
     public String getAuthorName(){
-        return author != null ? author.getUsername() : "<none>";
+        return author != null ? author.getFullName() : "<none>";
     }
 
     public Task() {
@@ -59,5 +61,13 @@ public class Task {
 
     public void setAuthor(User autor) {
         this.author = autor;
+    }
+
+    public String getFilename() {
+        return filename;
+    }
+
+    public void setFilename(String filename) {
+        this.filename = filename;
     }
 }
