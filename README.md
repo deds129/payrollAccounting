@@ -27,12 +27,12 @@
 Связи между сущностями представлены на приведенной ниже.
  
  <p align="center">
-  <img src="https://github.com/deds129/service-work-system/blob/master/img/ER.png" alt="config" width="620"/>
+  <img src="https://github.com/deds129/service-work-system/blob/master/img/ER.jpg" alt="config" width="620"/>
 </p>
   ER-диаграмма предметной области
   
   <p align="center">
-  <img src="https://github.com/deds129/service-work-system/blob/master/img/Conc.png" alt="config" width="620"/>
+  <img src="https://github.com/deds129/service-work-system/blob/master/img/Conc.jpg" alt="config" width="620"/>
 </p>
   Концептуальное представление программного обеспечения
 
