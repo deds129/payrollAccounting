@@ -27,12 +27,40 @@
 Связи между сущностями представлены на приведенной ниже.
  
  <p align="center">
-  <img src="https://github.com/deds129/service-work-system/blob/master/img/ER.jpg" alt="config" width="620" height = "620/>
-</p>
-  ER-диаграмма предметной области
+  <img src="https://github.com/deds129/service-work-system/blob/master/img/ER.jpg" alt="config" width="620" height = "620"/>
+ </p>
   
   <p align="center">
-  <img src="https://github.com/deds129/service-work-system/blob/master/img/Conc.jpg" alt="config" width="620"/>
-</p>
+   <img src="https://github.com/deds129/service-work-system/blob/master/img/Conc.jpg" alt="config" width="620"/>
+  </p>
+  
+  <p align="center">
+   <img src="https://github.com/deds129/service-work-system/blob/master/img/1.png" alt="config" width="620"/>
+  </p>
+  
+  <p align="center">
+   <img src="https://github.com/deds129/service-work-system/blob/master/img/2.png" alt="config" width="620"/>
+  </p>
+  
+   <p align="center">
+   <img src="https://github.com/deds129/service-work-system/blob/master/img/3.png" alt="config" width="620"/>
+  </p>
+  
+  <p align="center">
+   <img src="https://github.com/deds129/service-work-system/blob/master/img/4.png" alt="config" width="620"/>
+  </p>
+  
+   <p align="center">
+   <img src="https://github.com/deds129/service-work-system/blob/master/img/5.png" alt="config" width="620"/>
+  </p>
+  
+   <p align="center">
+   <img src="https://github.com/deds129/service-work-system/blob/master/img/6.png" alt="config" width="620"/>
+  </p>
+  
+  <p align="center">
+   <img src="https://github.com/deds129/service-work-system/blob/master/img/7.png" alt="config" width="620"/>
+  </p>
+                                                                                                             
   Концептуальное представление программного обеспечения
 
