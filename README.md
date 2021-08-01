@@ -27,7 +27,7 @@
 Связи между сущностями представлены на приведенной ниже.
  
  <p align="center">
-  <img src="https://github.com/deds129/service-work-system/blob/master/img/ER.jpg" alt="config" width="620"/>
+  <img src="https://github.com/deds129/service-work-system/blob/master/img/ER.jpg" alt="config" width="620" height = "620/>
 </p>
   ER-диаграмма предметной области
   
